@@ -1,0 +1,42 @@
+Acciones:
+Cortar
+Cortar lechuga y tomate
+Hornear pan
+Mezclar ingredientes
+salar
+armar medallones
+cocinar
+armar Hamburguesa
+
+s_mezclar = 0;
+s_salar = 0;
+s_armarMedallones = 0;
+s_cocinar = 0;
+s_armarHamburguesa1 = 0;
+s_armarHamburguesa2= 0;
+s_armarHamburguesa3 = 0;
+
+
+//Semaforos que son requeridos para armar la hamburguesa, pero que no dependen de otro para realizarse
+
+
+				Mutex_lock(hornearPan)
+cortarLechugaTomate()		hornearPan()
+v(s_armarHamburguesa1)		v(s_armarHamburguesa2)
+				Mutex_unlock(hornearPan)
+
+
+//Sincronización de semaforos que requieren de otros semaforos para su funcionamiento
+
+						Mutex_lock(salar)				Mutex_lock(cocinar)
+			P(s_mezclar)		p(s_salar)		p(s_armarMedallones)	p(s_cocinar)
+cortar()		mezclar()		salar()			armarMedallones()	cocinar()
+v(s_mezclar)		v(s_salar)		v(s_armarMedallones)	v(s_cocinar)		v(s_armarHamburguesa3)
+						Mutex_unlock(salar)				Mutex_unlock(cocinar)
+
+//Acción final
+
+p(s_armarHamburguesa1)
+p(s_armarHamburguesa2)
+p(s_armarHamburguesa3)
+armarHamburguesa()

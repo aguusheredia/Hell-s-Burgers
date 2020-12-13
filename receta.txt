@@ -1,0 +1,8 @@
+cortar|ajo|perejil|cebolla
+mezclar|ajo|perejil|cebolla|carne picada
+salar|sal
+armar medallones|mezcla para medallones
+cocinar|medallones
+cortar lechuga y tomate|lechuga|tomate
+hornear|pan
+Armar super hamburguesa|medallones|pan|lechuga|tomate
