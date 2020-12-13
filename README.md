@@ -7,3 +7,5 @@ algunos de ellos son compartidos. Se tienen que ordenar para
 cocinar los medallones ya que solo tienen una plancha para todos
 los equipos y esta cocina un medallón a la vez, existe solo un
 horno que cocina dos panes a la vez y un solo salero.
+
+En este proyecto se busca dar uso al concepto de threads en el lenguaje C, y junto a ello, la sincronización de semaforos.
